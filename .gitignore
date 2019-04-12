@@ -1,0 +1,4 @@
+*.dll
+.vs/
+source/ExternalDLL/.vs/
+source/FaceRecognitionGUI/.vs/
