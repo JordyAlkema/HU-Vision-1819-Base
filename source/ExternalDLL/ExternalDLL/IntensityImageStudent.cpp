@@ -4,13 +4,14 @@
 IntensityImageStudent::IntensityImageStudent() : IntensityImage() {
 	//int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
 	//TODO: Nothing
-	std::cout << "Hey this is me";
+	std::cout << "Hey this is me" << std::endl;
 	IntensityImageStudent(1,1);
 }
 
 IntensityImageStudent::IntensityImageStudent(const IntensityImageStudent &other) : IntensityImage(other.getWidth(), other.getHeight()) {
 	
-	
+
+	std::cout << "Hey this is me" << std::endl;
 	this->width = other.getWidth();
 	this->height = other.getHeight();
 
@@ -23,7 +24,7 @@ IntensityImageStudent::IntensityImageStudent(const IntensityImageStudent &other)
 }
 
 IntensityImageStudent::IntensityImageStudent(const int width, const int height) : IntensityImage(width, height) {
-	std::cout << "Hey this is me";
+	std::cout << "Hey this is me" << std::endl;
 	this->width = width;
 	this->height = height;
 
@@ -31,15 +32,17 @@ IntensityImageStudent::IntensityImageStudent(const int width, const int height) 
 
 	for (int i = 0; i < numberOfPixels; i++)
 	{
-		pixels[i] = {};
+		pixels[i] = (1,1,1);
 	}
 }
 
 IntensityImageStudent::~IntensityImageStudent() {
+	std::cout << "Hey this is me" << std::endl;
 	// Vector has automatic cleanup :)
 }
 
 void IntensityImageStudent::set(const int width, const int height) {
+	std::cout << "Hey this is me" << std::endl;
 	this->height = height;
 	this->width = width;
 
@@ -49,13 +52,14 @@ void IntensityImageStudent::set(const int width, const int height) {
 
 	for (int i = 0; i < numberOfPixels; i++)
 	{
-		newImage[i] = {};
+		newImage[i] = (1,1,1);
 	}
 
 	pixels = newImage;
 }
 
 void IntensityImageStudent::set(const IntensityImageStudent &other) {
+	std::cout << "Hey this is me" << std::endl;
 	height = other.getHeight();
 	width = other.getWidth();
 
@@ -72,10 +76,12 @@ void IntensityImageStudent::set(const IntensityImageStudent &other) {
 }
 
 void IntensityImageStudent::setPixel(int x, int y, Intensity pixel) {
+	std::cout << "Hey this is me" << std::endl;
 	pixels[x*y] = pixel;
 }
 
 void IntensityImageStudent::setPixel(int i, Intensity pixel) {
+	std::cout << "Hey this is me" << std::endl;
 	/*
 	* TODO: set pixel i in "Row-Major Order"
 	*
@@ -102,9 +108,11 @@ void IntensityImageStudent::setPixel(int i, Intensity pixel) {
 }
 
 Intensity IntensityImageStudent::getPixel(int x, int y) const {
+	std::cout << "Hey this is me" << std::endl;
 	return pixels[x*y];
 }
 
 Intensity IntensityImageStudent::getPixel(int i) const {
+	std::cout << "Hey this is me" << std::endl;
 	return pixels[i];
 }
