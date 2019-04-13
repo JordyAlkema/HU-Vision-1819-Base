@@ -1,44 +1,53 @@
 #include "RGBImageStudent.h"
+#include <iostream>
 
 RGBImageStudent::RGBImageStudent() : RGBImage() {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
 	//TODO: Nothing
 }
 
 RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.getWidth(), other.getHeight()) {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError;
 	//TODO: Create a copy from the other object
 }
 
 
 RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height) {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError;
 	//TODO: Initialize pixel storage
 }
 
 RGBImageStudent::~RGBImageStudent() {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError;
 	//TODO: delete allocated objects
 }
 
 void RGBImageStudent::set(const int width, const int height) {
+	std::cout << "test" << std::endl;
 	RGBImage::set(width, height);
 	int throwError = 0, e = 1 / throwError;
 	//TODO: resize or create a new pixel storage (Don't forget to delete the old storage)
 }
 
 void RGBImageStudent::set(const RGBImageStudent &other) {
+	std::cout << "test" << std::endl;
 	RGBImage::set(other.getWidth(), other.getHeight());
 	int throwError = 0, e = 1 / throwError;
 	//TODO: resize or create a new pixel storage and copy the object (Don't forget to delete the old storage)
 }
 
 void RGBImageStudent::setPixel(int x, int y, RGB pixel) {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError;
 	//TODO: no comment needed :)
 }
 
 void RGBImageStudent::setPixel(int i, RGB pixel) {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError;
 	/*
 	* TODO: set pixel i in "Row-Major Order"
@@ -64,12 +73,14 @@ void RGBImageStudent::setPixel(int i, RGB pixel) {
 }
 
 RGB RGBImageStudent::getPixel(int x, int y) const {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError;
 	//TODO: no comment needed :)
 	return 0;
 }
 
 RGB RGBImageStudent::getPixel(int i) const {
+	std::cout << "test" << std::endl;
 	int throwError = 0, e = 1 / throwError;
 	//TODO: see setPixel(int i, RGB pixel)
 	return 0;

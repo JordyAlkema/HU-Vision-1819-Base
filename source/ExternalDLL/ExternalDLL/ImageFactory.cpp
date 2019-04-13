@@ -10,6 +10,7 @@
 #include "IntensityImagePrivate.h"
 #include "IntensityImageStudent.h"
 #include <stdexcept>
+#include <iostream>
 
 
 //Student factory implementation
