@@ -76,7 +76,7 @@ void IntensityImageStudent::set(const IntensityImageStudent &other) {
 
 void IntensityImageStudent::setPixel(int x, int y, Intensity pixel) {
 	std::cout << "Hey this is me7" << std::endl;
-	pixels[x*y] = pixel;
+	pixels[x+y*width] = pixel;
 }
 
 void IntensityImageStudent::setPixel(int i, Intensity pixel) {
