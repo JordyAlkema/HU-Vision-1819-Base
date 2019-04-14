@@ -2,3 +2,4 @@
 .vs/
 source/ExternalDLL/.vs/
 source/FaceRecognitionGUI/.vs/
+.DS_Store
