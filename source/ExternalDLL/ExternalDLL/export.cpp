@@ -204,11 +204,11 @@ int imageHeight(Image * image) {
 
 
 RGBImage * getRGBImageFromData(int width, int height, unsigned char * pixels, int stride) {
-	//std::cout << "c++: getRGBImageFromData: " << width << "x" << height << " stride: " << stride << std::endl;
+	std::cout << "c++: getRGBImageFromData: " << width << "x" << height << " stride: " << stride << std::endl;
 	RGBImage * image = ImageFactory::newRGBImage(width, height);
 
 
-	//std::cout << "size: " << image->getWidth() << "x" << image->getHeight() << " stride: " << stride << std::endl;
+	std::cout << "size: " << image->getWidth() << "x" << image->getHeight() << " stride: " << stride << std::endl;
 
 	int size = image->getHeight() * image->getWidth();
 

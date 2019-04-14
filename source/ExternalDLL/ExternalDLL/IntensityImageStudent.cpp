@@ -1,44 +1,86 @@
 #include "IntensityImageStudent.h"
+#include <iostream>
 
 IntensityImageStudent::IntensityImageStudent() : IntensityImage() {
-	int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
+	//int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
 	//TODO: Nothing
+	std::cout << "Hey this is me" << std::endl;
+	IntensityImageStudent(1,1);
 }
 
 IntensityImageStudent::IntensityImageStudent(const IntensityImageStudent &other) : IntensityImage(other.getWidth(), other.getHeight()) {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: Create a copy from the other object
+	
+
+	std::cout << "Hey this is me2" << std::endl;
+	this->width = other.getWidth();
+	this->height = other.getHeight();
+
+	int numberOfPixels = other.getHeight() * other.getWidth();
+
+	for (int i = 0; i < numberOfPixels; i++)
+	{
+		pixels[i] = other.getPixel(i);
+	}
 }
 
 IntensityImageStudent::IntensityImageStudent(const int width, const int height) : IntensityImage(width, height) {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: Initialize pixel storage
+	std::cout << "Hey this is me3" << std::endl;
+	this->width = width;
+	this->height = height;
+	int numberOfPixels = width * height;
+
+	for (int i = 0; i < numberOfPixels; i++)
+	{
+		pixels.push_back(Intensity(1));
+	}
 }
 
 IntensityImageStudent::~IntensityImageStudent() {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: delete allocated objects
+	std::cout << "Hey this is me4" << std::endl;
+	// Vector has automatic cleanup :)
 }
 
 void IntensityImageStudent::set(const int width, const int height) {
-	IntensityImage::set(width, height);
-	int throwError = 0, e = 1 / throwError;
-	//TODO: resize or create a new pixel storage (Don't forget to delete the old storage)
+	std::cout << "Hey this is me5" << std::endl;
+	this->height = height;
+	this->width = width;
+
+	std::vector<Intensity> newImage;
+
+	int numberOfPixels = height * width;
+
+	for (int i = 0; i < numberOfPixels; i++)
+	{
+		newImage.push_back(Intensity(1));
+	}
+
+	pixels = newImage;
 }
 
 void IntensityImageStudent::set(const IntensityImageStudent &other) {
-	IntensityImage::set(other.getWidth(), other.getHeight());
-	int throwError = 0, e = 1 / throwError;
-	//TODO: resize or create a new pixel storage and copy the object (Don't forget to delete the old storage)
+	std::cout << "Hey this is me6" << std::endl;
+	height = other.getHeight();
+	width = other.getWidth();
+
+	std::vector<Intensity> newImage;
+
+	int numberOfPixels = height * width;
+
+	for (int i = 0; i < numberOfPixels; i++)
+	{
+		newImage[i] = other.getPixel(i);
+	}
+
+	pixels = newImage;
 }
 
 void IntensityImageStudent::setPixel(int x, int y, Intensity pixel) {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: no comment needed :)
+	std::cout << "Hey this is me7" << std::endl;
+	pixels[x*y] = pixel;
 }
 
 void IntensityImageStudent::setPixel(int i, Intensity pixel) {
-	int throwError = 0, e = 1 / throwError;
+	std::cout << "Hey this is me8" << std::endl;
 	/*
 	* TODO: set pixel i in "Row-Major Order"
 	*
@@ -60,16 +102,16 @@ void IntensityImageStudent::setPixel(int i, Intensity pixel) {
 	* 7		7
 	* 8		8
 	*/
+
+	pixels[i] = pixel;
 }
 
 Intensity IntensityImageStudent::getPixel(int x, int y) const {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: no comment needed :)
-	return 0;
+	std::cout << "Hey this is me9" << std::endl;
+	return pixels[x*y];
 }
 
 Intensity IntensityImageStudent::getPixel(int i) const {
-	int throwError = 0, e = 1 / throwError;
-	//TODO: see setPixel(int i, RGB pixel)
-	return 0;
+	std::cout << "Hey this is me10" << std::endl;
+	return pixels[i];
 }

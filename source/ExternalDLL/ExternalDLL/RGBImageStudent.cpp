@@ -1,45 +1,68 @@
 #include "RGBImageStudent.h"
+#include <iostream>
 
 RGBImageStudent::RGBImageStudent() : RGBImage() {
-	int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
+	std::cout << "test" << std::endl;
+	pixels = {};
+	//int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
 	//TODO: Nothing
 }
 
 RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.getWidth(), other.getHeight()) {
-	int throwError = 0, e = 1 / throwError;
+	std::cout << "test" << std::endl;
+	pixels = other.getPixels();
+
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: Create a copy from the other object
 }
 
 
 RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height) {
-	int throwError = 0, e = 1 / throwError;
+	std::cout << "test" << std::endl;
+	for (int i = 0; i < (width*height); i++) {
+		pixels.push_back(RGB(0, 0, 0));
+	}
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: Initialize pixel storage
 }
 
 RGBImageStudent::~RGBImageStudent() {
-	int throwError = 0, e = 1 / throwError;
+	//std::cout << "test" << std::endl;
+	//Vector has automatic cleanup
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: delete allocated objects
 }
 
 void RGBImageStudent::set(const int width, const int height) {
+	//std::cout << "test" << std::endl;
 	RGBImage::set(width, height);
-	int throwError = 0, e = 1 / throwError;
+	pixels.clear();
+	for (int i = 0; i < (width*height); i++) {
+		pixels.push_back(RGB(0, 0, 0));
+	}
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: resize or create a new pixel storage (Don't forget to delete the old storage)
 }
 
 void RGBImageStudent::set(const RGBImageStudent &other) {
+	//std::cout << "test" << std::endl;
 	RGBImage::set(other.getWidth(), other.getHeight());
-	int throwError = 0, e = 1 / throwError;
+	pixels = other.getPixels();
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: resize or create a new pixel storage and copy the object (Don't forget to delete the old storage)
 }
 
 void RGBImageStudent::setPixel(int x, int y, RGB pixel) {
-	int throwError = 0, e = 1 / throwError;
+	//std::cout << "test" << std::endl;
+	pixels[x + y * getWidth()] = pixel;
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: no comment needed :)
 }
 
 void RGBImageStudent::setPixel(int i, RGB pixel) {
-	int throwError = 0, e = 1 / throwError;
+	//std::cout << "test" << std::endl;
+	pixels[i] = pixel;
+	//int throwError = 0, e = 1 / throwError;
 	/*
 	* TODO: set pixel i in "Row-Major Order"
 	*
@@ -64,13 +87,21 @@ void RGBImageStudent::setPixel(int i, RGB pixel) {
 }
 
 RGB RGBImageStudent::getPixel(int x, int y) const {
-	int throwError = 0, e = 1 / throwError;
+	//std::cout << "test" << std::endl;
+	return pixels[x + y * getWidth()];
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: no comment needed :)
-	return 0;
+	//return 0;
 }
 
 RGB RGBImageStudent::getPixel(int i) const {
-	int throwError = 0, e = 1 / throwError;
+	//std::cout << "test" << std::endl;
+	return pixels[i];
+	//int throwError = 0, e = 1 / throwError;
 	//TODO: see setPixel(int i, RGB pixel)
-	return 0;
+	//return 0;
+}
+
+std::vector<RGB> RGBImageStudent::getPixels() const {
+	return pixels;
 }
