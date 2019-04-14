@@ -3,13 +3,13 @@
 
 RGBImageStudent::RGBImageStudent() : RGBImage() {
 	std::cout << "test" << std::endl;
-	pixels = {};
 	//int throwError = 0, e = 1 / throwError; //Throws error without the need to include a header
 	//TODO: Nothing
 }
 
 RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.getWidth(), other.getHeight()) {
-	std::cout << "test" << std::endl;
+	std::cout << "test2" << std::endl;
+	pixels.clear();
 	pixels = other.getPixels();
 
 	//int throwError = 0, e = 1 / throwError;
@@ -18,10 +18,8 @@ RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.
 
 
 RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height) {
-	std::cout << "test" << std::endl;
-	for (int i = 0; i < (width*height); i++) {
-		pixels.push_back(RGB(0, 0, 0));
-	}
+	std::cout << "test3" << std::endl;
+	pixels.resize(width*height);
 	//int throwError = 0, e = 1 / throwError;
 	//TODO: Initialize pixel storage
 }
@@ -34,12 +32,17 @@ RGBImageStudent::~RGBImageStudent() {
 }
 
 void RGBImageStudent::set(const int width, const int height) {
-	//std::cout << "test" << std::endl;
+	std::cout << "test" << std::endl;
 	RGBImage::set(width, height);
+	std::cout << "did we get here?1" << std::endl;
 	pixels.clear();
+	std::cout << "did we get here?2" << std::endl;
 	for (int i = 0; i < (width*height); i++) {
+		std::cout << "did we get here?3" << std::endl;
 		pixels.push_back(RGB(0, 0, 0));
+		std::cout << "did we get here?4" << std::endl;
 	}
+	std::cout << "did we get here?" << std::endl;
 	//int throwError = 0, e = 1 / throwError;
 	//TODO: resize or create a new pixel storage (Don't forget to delete the old storage)
 }
